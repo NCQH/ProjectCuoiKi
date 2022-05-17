@@ -27,23 +27,6 @@ void button::display()
     barWithTxt(left, top, right, bottom, fontsize, title, 1);
 }
 // end button setting
-radioButton::radioButton(int x, int y, int rad, char *name)
-{
-    this->x = x;
-    this->y = y;
-    this->rad = rad;
-    this->name = name;
-}
-void radioButton::display()
-{
-    circle(x, y, rad);
-    if (checked)
-    {
-        circle(x, y, (float)rad * 2 / 3);
-        setfillstyle(1, 0);
-        floodfill(x, y, 0);
-    }
-}
 void box::display()
 {
     if (check)
@@ -74,17 +57,17 @@ void barWithTxt(int left, int top, int right, int bottom, int fontsize, char *tx
     int bar_w = right - left;
     int bar_h = bottom - top;
     int x;
-    if (align == 0) // align left
+    if (align == 0) 						// align left, can trai
     {
         x = left;
     }
     else if (align == 1)
     {
-        x = left + (bar_w - text_w) / 2; // align center
+        x = left + (bar_w - text_w) / 2; 	// align center, can giua
     }
     else
     {
-        x = left + bar_w - text_w; // align right
+        x = left + bar_w - text_w; 			// align right, can phai
     }
     int y = top + (bar_h - text_h) / 2;
     if (fillstyle != 0)
@@ -96,7 +79,7 @@ void barWithTxt(int left, int top, int right, int bottom, int fontsize, char *tx
 }
 void createImage()
 {
-    // Vẽ ảnh nháp
+    // Ve anh nhap
     setbkcolor(9);
     setfillstyle(1, 15);
     setcolor(0);
@@ -109,17 +92,16 @@ void createImage()
     line(30, 10, 45, 25);
     line(30, 25, 45, 10);
 
-    // Khai báo biến để chứa kích thước của ảnh
     unsigned int size1;
 
-    // Gán kích thước của ảnh vào biến
+    // Bien size1 chua kich thuoc du lieu cua anh 
     size1 = imagesize(10, 10, 25, 25);
 
-    // Cấp phát động cho 2 con trỏ
+    // Cap phat dong�
     emptyBox = new int[size1];
     checkedBox = new int[size1];
 
-    // Gán giá trị theo bit vào con trỏ
+    // Ghi du lieu 2 anh vao 2 bien con tro vua duoc cap phat�
     getimage(10, 10, 25, 25, emptyBox);
     getimage(30, 10, 45, 25, checkedBox);
 
@@ -188,7 +170,7 @@ void load()
     {
         delay(10);
         line(200 + i, 300, 200 + i, 350);
-        // Prevent kbhit and click
+        // Prevent kbhit and click, tranh khi dang load nhan phim enter
         if (kbhit())
         {
             getch();
@@ -1633,7 +1615,6 @@ bool yesNoMessBox()
     putimage(100, 300, yesMessageBox, COPY_PUT);
     do
     {
-        // getxy();
         if (ismouseclick(WM_MOUSEMOVE))
         {
             int pos_x, pos_y;

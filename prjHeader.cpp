@@ -1,8 +1,9 @@
 #include "prjHeader.h"
 
+// Set current diretory, lay duong dan hien tai
 string get_current_dir()
 {
-    char buff[FILENAME_MAX]; // create string buffer to hold path
+    char buff[FILENAME_MAX];
     getcwd(buff, FILENAME_MAX);
     string current_working_dir(buff);
     return current_working_dir;

@@ -1,7 +1,7 @@
 #include "backend.h"
 
-extern const string ACCOUNT = get_current_dir() + "\\Data\\account.dat";
-extern const string PEOPLE = get_current_dir() + "\\Data\\people.csv";
+extern const string ACCOUNT = get_current_dir() + "\\Data\\account.dat"; 	// Duong dan den account.dat
+extern const string PEOPLE = get_current_dir() + "\\Data\\people.csv";		// Duong dan den people.csv
 
 using namespace std;
 
