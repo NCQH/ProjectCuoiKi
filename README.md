@@ -28,3 +28,4 @@ Thêm các linker sau
 ![image](https://user-images.githubusercontent.com/66376544/168626583-3a16cb95-e465-40fc-82a7-1e6952fd0f09.png)
 Cuối cùng F9 để compiler and run
 
+tài khoản mặc định là admin 1 nhé
